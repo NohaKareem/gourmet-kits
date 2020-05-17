@@ -1,0 +1,487 @@
+@charset "UTF-8";
+/* CSS Document */
+
+// color palette
+$gourmetBlue: #4FB8D5;
+$gourmetGreen: #87AA1F;
+$gourmetMainColor: #F9A63C;
+$gray: #A29683;
+
+$baseMargin: 10px;
+$centeredMargin: 0 auto;
+$dsktpStart: 640px;
+$baseSize: 20px; 
+$headerSize: $baseSize * 1.5; 
+$dsktpHeaderSize: $baseSize * 2.5;
+$dsktpNavSize: 30px;
+
+//// mixins ////
+@mixin transformStyle($style){
+    -webkit-transform-style: $style;
+    transform-style: $style;
+}
+
+@mixin backFaceVisibility($visibility){
+	-webkit-backface-visibility: $visibility;
+	backface-visibility: $visibility;
+}
+
+@mixin transform($transformation) {
+    -webkit-transform: $transformation;
+    -ms-transform: $transformation;    
+	transform: $transformation;
+}
+
+.hidden {
+    display: none;
+}
+
+// different from .hidden where visibility propery can be modified, as opposed
+//  to altering the display property, affecting the navigation's styling
+.invisible {
+    visibility: hidden;
+    height: 0px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: $baseSize;
+    line-height: 1.25;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    font-size: $headerSize;
+} 
+
+br {
+    margin: $baseMargin auto;
+}
+
+p {
+    margin: $baseMargin;
+    color: $gourmetMainColor;
+}
+
+#logoHeading {
+    font-size: 30px;
+    margin-bottom: $baseMargin;
+    color: $gourmetBlue;
+    text-align: center;
+}
+
+#sliderButtons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    position: relative;
+
+    // overlay button on the top-neighbouring rightQuote 
+    top: $baseMargin * -2.5;
+}
+
+.circleButton {
+    border-radius: 50%; 
+    width: $baseMargin;
+    height: $baseMargin;
+    background-color: white;
+    border: 2px solid $gourmetMainColor;
+    margin: $baseMargin;
+}
+
+.circleButton.selected {
+    background-color: $gourmetMainColor;
+}
+
+//// sections ////
+// flex container
+.container {
+    margin: $centeredMargin;
+    padding-top: $baseMargin * 3;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column; 
+    flex-wrap: wrap;
+
+    // span entire screen
+    flex: 1 1 100vh; 
+    overflow: hidden; //get rid of horizontal scroll
+}
+
+.pageSection {
+    p, h2 {
+        padding-left: $baseMargin;
+        padding-right: $baseMargin;
+    }
+}
+
+// section 1
+#heroSection {
+    margin: 0 $baseMargin * 3;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 auto;
+}
+
+#heroHeaderAndText {
+    margin-top: - $baseMargin * 3;
+    text-align: center;
+    margin-bottom: $baseMargin * 3;
+}
+
+img#heroImg {
+    border-radius: 100%;
+    max-width: 70%;
+}
+
+#heroText {
+    font-size: $headerSize;
+}
+
+// section 2
+#aboutUs {
+
+    position: relative;
+
+    #aboutUsText {
+        color: $gourmetBlue;
+    }
+
+    img#aboutImg {
+        max-Rwidth: 100%;
+    }
+    
+    #aboutUsHeader {
+        color: white;
+        position: absolute;
+        top: $baseMargin * 6.5;
+        font-size: $headerSize;
+        background-color: rgba(0,0,0,0.5);
+    }
+}
+
+// section 3 
+#featuresSection {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr); 
+    
+
+}
+.featureImg {
+    max-width: 100%;
+}
+img.flipSectionImg {
+    max-width: 100%;
+}
+
+// text overlay 
+.textOverlay {
+    position: relative;
+    top: $baseMargin * -10;
+    margin-left: $baseMargin;
+    text-align: left;
+    color: white;
+    text-shadow: 1px 1px 3px $gray;
+    font-weight: bold;
+    font-size: $baseSize;
+    top: $baseMargin * -5;
+}
+
+.sectionBack {
+    background-color: white;
+    h3 {
+        color: $gourmetMainColor;
+    }
+}
+
+.frontFace {
+    z-index: 2;
+}
+
+.backFace {
+    z-index: 1;
+}
+	        // 	NB: the use of css animation for flip card effect has been implemented but was not compatible with grid
+
+            // //// feature fip sections //// 
+            // .flipSection {
+            //     perspective: 900px;
+            //     @include transformStyle(preserve-3d);
+            //     position: relative;
+            // }
+
+            // .sectionFront, .sectionBack {
+            //     position: absolute;
+            //     top: 0px;
+            //     @include backFaceVisibility(hidden);
+            //     transition: all 0.8s ease-in-out; 
+            // }
+
+            // // original positions (before flip)
+            // .sectionFront {
+            //     @include transform(rotateY(0deg));
+            // }
+
+            // .sectionBack {
+            //     @include transform(rotateY(-180deg));
+            // }
+
+            // // transformed positions, on hover
+            // .flipSection:hover .sectionFront {
+            //     @include transform(rotateY(180deg));
+            // }
+
+            // .flipSection:hover .sectionBack {
+            //     @include transform(rotateY(0deg));
+            // }
+
+// section 4
+#testimonialsSection {
+    margin: $centeredMargin;
+    margin-right: $baseMargin * 3;
+    margin-left: $baseMargin * 1.5;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+}
+
+// left align flex item
+#leftQuote {
+    align-self: flex-start;
+}
+
+// right align flex item 
+#rightQuote {
+    align-self: flex-end;
+}
+
+#leftQuote, #rightQuote {
+    font-family: 'Noto Serif', serif;
+    font-size: 80px; 
+    padding-left: $baseMargin;
+    padding-right: $baseMargin;
+    color: $gourmetMainColor;
+}
+
+// section 5
+#CTASection {
+    padding-top: $baseMargin * 2;
+    padding-right: $baseMargin  * 2;
+    text-align: center;
+    display: grid;
+    
+    // each row takes up as much space as needed 
+    grid-template-rows: (7, auto);
+    justify-items: center;
+    row-gap: $baseMargin;
+    
+    p, h2 {
+        color: white;
+    }
+
+    button {
+        background-color: white;
+        color: $gourmetBlue;
+        border-radius: $baseMargin * 3;
+        padding: $baseMargin / 1.25;
+        border: none; 
+        width: 150px;
+        font-size: $baseSize;
+        margin-top: $baseMargin * 2;
+        margin-bottom: $baseMargin * 2;
+    }
+
+    input {
+        font-size: $baseSize;
+        padding: 5px;
+        border: none;
+    }
+}
+
+/////////////////////
+//// navigation ////
+.fa {
+    color: $gourmetBlue;
+}
+
+#mobileNav {
+    margin-top: $baseMargin;
+    margin-left: $baseMargin;
+    position: absolute;
+    top: -0.2%;
+    
+    // css animation on click
+    transition: all 0.3s ease-in-out;
+}
+
+#mobileNav.openMenu {
+    @include transform(rotate(90deg))
+}
+
+#navMenu {
+    margin-top: $baseMargin * -2.5;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: $baseMargin * 10;
+    padding-left: $baseMargin;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    color: $gourmetMainColor;
+    font-size: $baseSize;
+
+    li {
+        margin-right: $baseMargin * 2;
+        a:hover {
+            color: $gourmetBlue;
+        }
+    }
+}
+
+.visible {
+    visibility: visible;
+}
+
+a {
+    // same color as surrounding text
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    display: inline-block;
+}
+
+@media screen and (min-width: 1330px) {
+    #heroHeaderAndText {
+        text-align: left;
+        p, h2{
+            font-size: $dsktpHeaderSize; 
+        }
+    }
+    #logoHeading {
+        text-align: left;
+    }
+
+
+}
+
+input[type=text],input[type=email] {
+    border-radius: $baseMargin * 2;
+}
+
+@media screen and (min-width: $dsktpStart) {
+    h2, #aboutUsHeader {
+        font-size: $dsktpHeaderSize;
+    }
+
+    //// nav ////
+    #mobileNav {
+        display: none;
+    }
+
+    #navMenu {
+        visibility: visible;
+        font-size: $dsktpNavSize;
+    }
+
+    //// sections ////
+    //lets make it a 12 column grid, then we can center
+    #heroSection {
+        display: grid; 
+        grid-template-columns: repeat(12,minmax(0,1fr)); 
+    }
+
+     #heroHeaderAndText {
+
+        grid-column: 2/7;
+    } 
+
+     #heroImg {
+        grid-column: 7/12;
+        margin-left: auto; //push to far left
+    }
+
+    .leftCol
+    {
+        display: contents; //we want actual image to be part of grid
+    }
+
+    #aboutUsImage
+    {
+        display: contents; //we want actual image to be part of grid, bye bye white space
+    }
+
+    #aboutUsImage img
+    {
+        grid-column: 1/2;
+    }
+
+    #aboutUsText
+    {
+        grid-column: 2/-1;
+    }
+
+    // section 3 
+    #featuresSection {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+
+        #textOverlay {
+            text-align: center;
+        }
+    }
+
+    #aboutUs {
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+
+        #aboutUsHeader {
+            top: $baseMargin * 10;
+            text-align: left;
+        }
+
+        #aboutUsText {
+            margin-top: $baseMargin * 3;
+            font-size: 3vw; 
+            align-self: center;
+            justify-self: center;
+        }
+    }
+
+    #aboutUsHeader {
+        top: $baseMargin * 10;
+        text-align: left;
+    }
+
+    footer {
+        padding-right: $baseMargin;
+    }
+}
+
+/////////////////////
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    padding: $baseMargin;
+    padding-right: $baseMargin * 2.5;
+    .fa {
+        color: white;
+    }
+}
+
+#CTASection, footer {
+    background-color: $gourmetBlue;
+}

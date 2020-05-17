@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gourmet Kits</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/ScrollToPlugin.min.js"></script>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="hidden">Gourmet Kits landing page</h1>
+        <nav id="mobileNav">
+            <h2 class="hidden">Mobile navigation menu</h2>
+            <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+        </nav>
+        <nav id="navMenu" class="invisible">
+            <h2 class="hidden">Desktop navigation menu</h2>
+            <ul>
+                <li><a href="#aboutUs" data-url="aboutUs">about us</a></li>
+                <li><a href="#featuresSection" data-url="featuresSection">features</a></li>
+                <li><a href="#testimonialsSection" data-url="testimonialsSection">testimonials</a></li>
+                <li><a href="#CTASection" data-url="CTASection">sign-up</a></li>
+            </ul>
+        </nav>
+        <section class="pageSection" id="heroSection">
+            <h2 class="hidden">Hero Section</h2>
+            <div id="heroHeaderAndText">
+                <h2 id="logoHeading" class="bold">Gourmet Kits</h2>
+                <div id="heroText">
+                    <p>
+                        <span class="bold">cooking joy + nourishing meals</span>
+                        <br /> minus the shopping and prepping hassles
+                    </p>
+                </div>
+            </div>
+            <img sizes="(max-width: 1200px) 100vw, 1200px" srcset="
+                images/hero/heroImg_w_320.jpg 320w,
+                images/hero/heroImg_w_463.jpg 463w,
+                images/hero/heroImg_w_586.jpg 586w,
+                images/hero/heroImg_w_698.jpg 698w,
+                images/hero/heroImg_w_796.jpg 796w,
+                images/hero/heroImg_w_886.jpg 886w,
+                images/hero/heroImg_w_980.jpg 980w,
+                images/hero/heroImg_w_1081.jpg 1081w,
+                images/hero/heroImg_w_1165.jpg 1165w,
+                images/hero/heroImg_w_1200.jpg 1200w" src="images/hero/heroImg_w_1200.jpg" id="heroImg"
+                alt="Hero image: wholesome meal and ingredients">
+        </section>
+        <section class="pageSection" id="aboutUs">
+            <div class="leftCol">
+                <h2 id="aboutUsHeader">About Us</h2>
+                <picture id="aboutUsImage">
+
+                    <source sizes="(min-width: 640px) 50vw, 640px" srcset="
+                    images/about/about_w_640.jpg 640w,
+                    images/about/about_w_815.jpg 815w" media="(min-width: 640px)">
+
+                    <img sizes="(max-width: 639px) 100vw, 636px" srcset="
+                            images/about/about_w_320.jpg 320w,
+                            images/about/about_w_636.jpg 636w" src="images/about/about_w_636.jpg"
+                        alt="About us: blue plate with letters forming the words 'MEAL PLAN'" id="aboutImg">
+                </picture>
+            </div>
+
+            <p id="aboutUsText">We plan and source healthy and tasty meals so
+                you don’t have to. Our meal kits deliver you
+                weekly pre-prepped mise en place (aka, everything
+                in its place) for you to enjoy a warm home-cooked gourmet meal
+                without the hassles of shopping and prepping.
+                Every week’s menu’s a surprise!
+                <span class="bold"> <a href="#CTASection">Sign up now</a> </span>
+                to get your first kit free!</p>
+        </section>
+        <section class="pageSection" id="featuresSection">
+            <h2 class="hidden">Features Section</h2>
+            <div class="flipSection">
+                <div class="sectionFront" id="flipSection_0">
+                    <h2 class="hidden">Front card</h2>
+                    <picture class="featureImg">
+                        <!-- desktop -->
+                        <source srcset="
+                        images/healthy/dsktp_feat_1_healthy_w_1020.jpg 1020w" media="(min-width: 640px)">
+                        <!-- mobile -->
+                        <img srcset="
+                        images/healthy/feat_1_healthy_w_320.jpg 320w,
+                        images/healthy/feat_1_healthy_w_640.jpg 640w" src="images/healthy/feat_1_healthy_w_640.jpg"
+                            alt="Healthy: Cantaloupe" class="flipSectionImg">
+                    </picture>
+                    <h3 class="textOverlay">Healthy</h3>
+                </div>
+                <div class="sectionBack invisible" id="flipSectionBack_0">
+                    <h2 class="hidden">Back card</h2>
+                    <h3>Healthy</h3>
+                    <p>We use only seasonal whole ingredients in our meal kits to ensure every meal is a nourishing one.
+                        Additionally, we source our ingredients from local organic farmers and have have a team of
+                        dedicated chefs and nutritionists collaborating to ensure that your meals are the healthiest
+                        possible. </p>
+                </div>
+            </div>
+            <div class="flipSection">
+                <div class="sectionFront" id="flipSection_1">
+                    <h2 class="hidden">Front card</h2>
+                    <picture class="featureImg">
+                        <!-- desktop -->
+                        <source srcset="
+                            images/tasty/dsktp_feat_2_tasty_w_1020.jpg 1020w"
+                            src="images/tasty/dsktp_feat_2_tasty_w_1020.jpg" media="(min-width: 640px)">
+                        <!-- mobile -->
+                        <img srcset="
+                            images/tasty/feat_2_tasty_w_320.jpg 320w, 
+                            images/tasty/feat_2_tasty_w_640.jpg 640w" src="images/tasty/feat_2_tasty_w_640.jpg"
+                            alt="Tasty: Plated meal" class="flipSectionImg">
+                    </picture>
+                    <h3 class="textOverlay">Tasty</h3>
+                </div>
+                <div class="sectionBack invisible" id="flipSectionBack_1">
+                    <h2 class="hidden">Back card</h2>
+                    <h3>Tasty</h3>
+                    <p>Seasons change and so do our recipes - our meal kits are always a surprise to keep you excited!
+                        They include classics with Gourmet Kits's healthy twists, as well as offer creative new recipes
+                        to bring you healthy meals to look forward to. </p>
+                </div>
+            </div>
+            <div class="flipSection">
+                <div class="sectionFront" id="flipSection_2">
+                    <h2 class="hidden">Front card</h2>
+                    <picture class="featureImg">
+                        <!-- desktop -->
+                        <source srcset="
+                                images/sustainable/dsktp_feat_3_sustainable_w_1020.jpg 1020w"
+                            src="images/sustainable/dsktp_feat_3_sustainable_w_1020.jpg" media="(min-width: 640px)">
+                        <!-- mobile -->
+                        <img srcset="
+                            images/sustainable/feat_3_sustainable_w_320.jpg 320w,
+                            images/sustainable/feat_3_sustainable_w_640.jpg 640w"
+                            src="images/sustainable/feat_3_sustainable_w_640.jpg"
+                            alt="Sustainable: pasta in cloth bags, and unpackaged garlic" class="flipSectionImg">
+                    </picture>
+                    <h3 class="textOverlay">Sustainable</h3>
+                </div>
+                <div class="sectionBack invisible" id="flipSectionBack_2">
+                    <h2 class="hidden">Back card</h2>
+                    <h3>Sustainable</h3>
+                    <p>Convenience often comes at the price of the environment. Not at Gourmet Kits! We only use
+                        stainless steel, glass, cloth and paper packaging, and offer packaging returns for returning
+                        customers to help you save more! We also source our produce from local farmers, helping not just
+                        the local community thrive but also keep our carbon footprint down. </p>
+                </div>
+            </div>
+            <div class="flipSection">
+                <div class="sectionFront" id="flipSection_3">
+                    <h2 class="hidden">Front card</h2>
+                    <picture class="featureImg">
+                        <!-- desktop -->
+                        <source srcset="
+                                    images/easy/dsktp_feat_4_easy_w_1020.jpg 1020w"
+                            src="images/easy/dsktp_feat_4_easy_w_1020.jpg" media="(min-width: 640px)">
+                        <!-- mobile -->
+                        <img srcset="images/easy/feat_4_easy_w_320.jpg 320w,
+                                images/easy/feat_4_easy_w_640.jpg 640w" src="images/easy/feat_4_easy_w_640.jpg"
+                            alt="Easy: various pre-cut ingredients on a chopping board" class="flipSectionImg">
+                    </picture>
+
+                    <h3 class="textOverlay">Easy</h3>
+                </div>
+                <div class="sectionBack invisible" id="flipSectionBack_3">
+                    <h2 class="hidden">Back card</h2>
+                    <h3>Easy</h3>
+                    <p>All the ingredients come pre-measured, pre-washed and even pre-cut at times to help you get meals
+                        ready faster, all priced less than daily takeout.</p>
+                </div>
+            </div>
+        </section>
+        <section class="pageSection" id="testimonialsSection">
+            <h2 class="hidden">Testimonials Section</h2>
+            <span id="leftQuote">“</span>
+            <article class="testimonialQuote">
+                <h2 class="hidden">Client testimonial 1</h2>
+                <p class="testimonialText" id="testimonial_0">
+                    The weekly
+                    menus are always a pleasant surprise! I also love how easy it is to whip everything together in no
+                    time,
+                    given how they’re all pre-washed and pre-cut. Thanks Gourmet Kits!
+                    <br /><span class="testimonialAuthor">- Alice</span>
+                </p>
+            </article>
+            <article class="testimonialQuote">
+                <h2 class="hidden">Client testimonial 2</h2>
+                <p class="testimonialText invisible" id="testimonial_1">
+                    Gourmet kits always sources the freshest ingredients, they’re so fragrant and that’s even before I
+                    cook aything! I especially love their fruit selections that make for the best desserts - reminds me
+                    with Chez Panisse’s dessert fruit bowls!
+                    <br /><span class="testimonialAuthor">- Bob</span>
+                </p>
+            </article>
+            <article class="testimonialQuote">
+                <h2 class="hidden">Client testimonial 3</h2>
+                <p class="testimonialText invisible" id="testimonial_2">
+                    I’ve tried the free week of meals and have been a returning customer ever since. It saves me so much
+                    time and energy, and is always a source of joy knowing that I have a tasty healthy meal ready for my
+                    family when I come home.
+                    <br /><span class="testimonialAuthor">- Noura</span>
+                </p>
+            </article>
+
+            <span id="rightQuote">”</span>
+            <div id="sliderButtons">
+                <!-- circle buttons to navigate through testimonials -->
+                <a href="#">
+                    <div class="circleButton selected" id="circleButton_0"></div>
+                </a>
+                <a href="#">
+                    <div class="circleButton" id="circleButton_1"></div>
+                </a>
+                <a href="#">
+                    <div class="circleButton" id="circleButton_2"></div>
+                </a>
+            </div>
+        </section>
+        <section class="pageSection" id="CTASection">
+            <h2 class="hidden">CTA (Call To Action) Section</h2>
+            <h2>Sign up today</h2>
+            <p>Get a voucher for a free week of meals when you sign up for an account!</p>
+            <p>Name</p><input type="text">
+            <p>Email</p><input type="email">
+            <button class="bold">Sign-up</button>
+        </section>
+        <footer>
+            <div id="rightFooter">
+                <ul>
+                    <li><a href="#aboutUs">about us</a></li>
+                    <li><a href="#">TOS</a></li>
+                    <li><a href="#">privacy</a></li>
+                </ul>
+            </div>
+            <div id="leftFooter">
+                <ul class="socials">
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

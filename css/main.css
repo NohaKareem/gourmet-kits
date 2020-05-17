@@ -1,0 +1,375 @@
+/* CSS Document */
+.hidden {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+  height: 0px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+br {
+  margin: 10px auto;
+}
+
+p {
+  margin: 10px;
+  color: #F9A63C;
+}
+
+#logoHeading {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #4FB8D5;
+  text-align: center;
+}
+
+#sliderButtons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
+  top: -25px;
+}
+
+.circleButton {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border: 2px solid #F9A63C;
+  margin: 10px;
+}
+
+.circleButton.selected {
+  background-color: #F9A63C;
+}
+
+.container {
+  margin: 0 auto;
+  padding-top: 30px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 1 1 100vh;
+  overflow: hidden;
+}
+
+.pageSection p, .pageSection h2 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#heroSection {
+  margin: 0 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 auto;
+}
+
+#heroHeaderAndText {
+  margin-top: -30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+img#heroImg {
+  border-radius: 100%;
+  max-width: 70%;
+}
+
+#heroText {
+  font-size: 30px;
+}
+
+#aboutUs {
+  position: relative;
+}
+#aboutUs #aboutUsText {
+  color: #4FB8D5;
+}
+#aboutUs img#aboutImg {
+  max-Rwidth: 100%;
+}
+#aboutUs #aboutUsHeader {
+  color: white;
+  position: absolute;
+  top: 65px;
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#featuresSection {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.featureImg {
+  max-width: 100%;
+}
+
+img.flipSectionImg {
+  max-width: 100%;
+}
+
+.textOverlay {
+  position: relative;
+  top: -100px;
+  margin-left: 10px;
+  text-align: left;
+  color: white;
+  text-shadow: 1px 1px 3px #A29683;
+  font-weight: bold;
+  font-size: 20px;
+  top: -50px;
+}
+
+.sectionBack {
+  background-color: white;
+}
+.sectionBack h3 {
+  color: #F9A63C;
+}
+
+.frontFace {
+  z-index: 2;
+}
+
+.backFace {
+  z-index: 1;
+}
+
+#testimonialsSection {
+  margin: 0 auto;
+  margin-right: 30px;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+}
+
+#leftQuote {
+  align-self: flex-start;
+}
+
+#rightQuote {
+  align-self: flex-end;
+}
+
+#leftQuote, #rightQuote {
+  font-family: "Noto Serif", serif;
+  font-size: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #F9A63C;
+}
+
+#CTASection {
+  padding-top: 20px;
+  padding-right: 20px;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 7, auto;
+  justify-items: center;
+  row-gap: 10px;
+}
+#CTASection p, #CTASection h2 {
+  color: white;
+}
+#CTASection button {
+  background-color: white;
+  color: #4FB8D5;
+  border-radius: 30px;
+  padding: 8px;
+  border: none;
+  width: 150px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#CTASection input {
+  font-size: 20px;
+  padding: 5px;
+  border: none;
+}
+
+.fa {
+  color: #4FB8D5;
+}
+
+#mobileNav {
+  margin-top: 10px;
+  margin-left: 10px;
+  position: absolute;
+  top: -0.2%;
+  transition: all 0.3s ease-in-out;
+}
+
+#mobileNav.openMenu {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+#navMenu {
+  margin-top: -25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+  padding-left: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  color: #F9A63C;
+  font-size: 20px;
+}
+#navMenu li {
+  margin-right: 20px;
+}
+#navMenu li a:hover {
+  color: #4FB8D5;
+}
+
+.visible {
+  visibility: visible;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  display: inline-block;
+}
+
+@media screen and (min-width: 1330px) {
+  #heroHeaderAndText {
+    text-align: left;
+  }
+  #heroHeaderAndText p, #heroHeaderAndText h2 {
+    font-size: 50px;
+  }
+
+  #logoHeading {
+    text-align: left;
+  }
+}
+input[type=text], input[type=email] {
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 640px) {
+  h2, #aboutUsHeader {
+    font-size: 50px;
+  }
+
+  #mobileNav {
+    display: none;
+  }
+
+  #navMenu {
+    visibility: visible;
+    font-size: 30px;
+  }
+
+  #heroSection {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  #heroHeaderAndText {
+    grid-column: 2/7;
+  }
+
+  #heroImg {
+    grid-column: 7/12;
+    margin-left: auto;
+  }
+
+  .leftCol {
+    display: contents;
+  }
+
+  #aboutUsImage {
+    display: contents;
+  }
+
+  #aboutUsImage img {
+    grid-column: 1/2;
+  }
+
+  #aboutUsText {
+    grid-column: 2/-1;
+  }
+
+  #featuresSection {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+  #featuresSection #textOverlay {
+    text-align: center;
+  }
+
+  #aboutUs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #aboutUs #aboutUsHeader {
+    top: 100px;
+    text-align: left;
+  }
+  #aboutUs #aboutUsText {
+    margin-top: 30px;
+    font-size: 3vw;
+    align-self: center;
+    justify-self: center;
+  }
+
+  #aboutUsHeader {
+    top: 100px;
+    text-align: left;
+  }
+
+  footer {
+    padding-right: 10px;
+  }
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  padding: 10px;
+  padding-right: 25px;
+}
+footer .fa {
+  color: white;
+}
+
+#CTASection, footer {
+  background-color: #4FB8D5;
+}
+
+/*# sourceMappingURL=main.css.map */
